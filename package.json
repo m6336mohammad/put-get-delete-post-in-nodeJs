@@ -1,0 +1,19 @@
+{
+  "name": "put-get-delete-post-in-nodejs",
+  "version": "1.0.0",
+  "description": "how programe esey 4 function put , get , post, delete in nodeJs and javaScript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m6336mohammad/put-get-delete-post-in-nodeJs.git"
+  },
+  "author": "mohammad hadi and mina karimi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m6336mohammad/put-get-delete-post-in-nodeJs/issues"
+  },
+  "homepage": "https://github.com/m6336mohammad/put-get-delete-post-in-nodeJs#readme"
+}
