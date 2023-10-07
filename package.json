@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/m6336mohammad/put-get-delete-post-in-nodeJs/issues"
   },
-  "homepage": "https://github.com/m6336mohammad/put-get-delete-post-in-nodeJs#readme"
+  "homepage": "https://github.com/m6336mohammad/put-get-delete-post-in-nodeJs#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
