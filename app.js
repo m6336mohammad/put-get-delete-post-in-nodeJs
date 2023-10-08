@@ -17,8 +17,11 @@ app.get('/', (req, res)=>{
 
 //added get function for get by id '/:id'
 app.get('/api/user/:id', (req, res)=>{
+  const cont = country.find((c)=> c.id === parseInt(req.params.id));
+  if(!cont){return res.send('this counmter not find');}
+  res.send({cont});
   console.log(req.params.id);
-  res.send('your request ID ==>: ' +req.params.id )
+  // res.send('your request ID ==>: ' +req.params.id )
 })
 
 
