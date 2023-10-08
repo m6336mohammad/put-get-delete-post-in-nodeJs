@@ -1,5 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
+import  country  from './country.js';
+
 const app =express();
 
 const port = process.env.PORT || 3000; // if not font port number on the .env file assign default port 3000
@@ -9,7 +11,8 @@ const port = process.env.PORT || 3000; // if not font port number on the .env fi
 //added get function for root get '/'
 app.get('/', (req, res)=>{
   console.log(req.body);
-  res.send("welcom to home page")
+  // res.send("welcom to home page" )
+  res.json(country)
 })
 
 //added get function for get by id '/:id'

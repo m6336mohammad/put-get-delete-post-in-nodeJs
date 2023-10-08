@@ -1,4 +1,4 @@
- country = [
+export default[
   {
     id: 1,
     name: "America",
@@ -9,4 +9,4 @@
   },
 ];
 
-export { country };
+
