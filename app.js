@@ -15,7 +15,7 @@ app.get('/', (req, res)=>{
 //added get function for get by id '/:id'
 app.get('/api/user/:id', (req, res)=>{
   console.log(req.params.id);
-  res.send("welcom to home page")
+  res.send('your request ID ==>: ' +req.params.id )
 })
 
 
