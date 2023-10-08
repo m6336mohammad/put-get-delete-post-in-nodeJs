@@ -24,7 +24,7 @@ app.get('/api/user/:id', (req, res)=>{
   // res.send('your request ID ==>: ' +req.params.id )
 })
 
-
+//added post
 
 app.listen(port, ()=>{
   console.log(`server run on port: ${port}`);
