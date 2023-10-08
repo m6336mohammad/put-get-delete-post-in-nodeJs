@@ -1,4 +1,4 @@
-const country = [
+ country = [
   {
     id: 1,
     name: "America",
