@@ -19,7 +19,7 @@ app.get('/', (req, res)=>{
 app.get('/api/user/:id', (req, res)=>{
   const cont = country.find((c)=> c.id === parseInt(req.params.id));
   if(!cont){return res.send('this counmter not find');}
-  res.send({cont});
+  res.send({data:cont , massege: 'ok'});
   console.log(req.params.id);
   // res.send('your request ID ==>: ' +req.params.id )
 })
