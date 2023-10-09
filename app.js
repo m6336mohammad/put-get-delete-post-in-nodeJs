@@ -29,7 +29,7 @@ app.get("/api/country/:id", (req, res) => {
 
 //added post
 app.post("/api/country",[
-  body('name','country name can not be empty').notEmpty(),
+  body('name','country name can not be empty').notEmpty().exists(),//check the name field is in body request or not
 ], (req, res) => {
   const error = validationResult(req);
   if(!error.isEmpty()){return res.status(400).json({data: null ,error: error.array() , massege: 'validation error: you shold be enter country name'})}
