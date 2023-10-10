@@ -41,6 +41,70 @@ app.post("/api/country",[
   console.log(country);
 });
 
+
+
+//>>>> added put <<<<
+app.put(
+  "/api/country/:id",
+  [body("name", "country name can not be empty").notEmpty()],
+  (req, res) => {
+    
+    //check user
+    const countryId = country.find((c) => c.id === parseInt(req.params.id));
+    if (!countryId) {
+      return res
+        .status(400)
+        .json({ data: null, massege: "this country id not find" });
+    }
+
+    // validate
+
+    
+        
+          
+    
+
+        
+        Expand All
+    
+    @@ -88,6 +90,22 @@ app.put(
+  
+    const error = validationResult(req);
+    if (!error.isEmpty()) {
+      return res
+        .status(400)
+        .json({
+          data: null,
+          error: error.array(),
+          massege: "validation error",
+        });
+    }
+    //map key
+    const countrys = country.map((cu) => {
+      if (cu.id === parseInt(req.params.id)) {
+        return { ...cu, ...req.body };
+      }
+      return cu;
+    });
+    res.status(200).json({ data: countrys, message: "ok" });
+  }
+);
+
+
+
+//>>>> added delete <<<<
+app.delete('/api/country/:id' , (req,res)=>{
+
+  const countryId = country.find((c)=> c.id === parseInt(req.params.id));
+  if(!countryId){return res.status(400).json({data: null , massege: 'country id not find'})};
+  
+  const index = country.indexOf(countryId);
+  country.splice(index,1);
+  
+  res.status(200).jsonp({data:country , message: 'ok'})
+  })
+
+
 app.listen(port, () => {
   console.log(`server run on port: ${port}`);
 });
