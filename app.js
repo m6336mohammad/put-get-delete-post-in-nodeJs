@@ -41,6 +41,8 @@ app.post(
           massege: "validation error: you shold be enter country name",
         });
     }
+
+    
     country.push({ id: country.length + 1, ...req.body });
     res.status(200).json({
       data: country,
@@ -61,7 +63,7 @@ app.put(
     if (!countryId) {
       return res
         .status(400)
-        .json({ data: Null, massege: "this country id not find" });
+        .json({ data: null, massege: "this country id not find" });
     }
 
     // validate
@@ -87,6 +89,22 @@ app.put(
     res.status(200).json({ data: countrys, message: "ok" });
   }
 );
+
+
+
+//>>>> added delete <<<<
+app.delete('/api/country/:id' , (req,res)=>{
+
+const countryId = country.find((c)=> c.id === parseInt(req.params.id));
+if(!countryId){return res.status(400).json({data: null , massege: 'country id not find'})};
+
+const index = country.indexOf(countryId);
+country.splice(index,1);
+
+res.status(200).jsonp({data:country , message: 'ok'})
+})
+
+
 
 app.listen(port, () => {
   console.log(`server run on port: ${port}`);
