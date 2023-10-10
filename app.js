@@ -41,6 +41,28 @@ app.post("/api/country",[
   console.log(country);
 });
 
+//added put
+app.put("/api/country/:id" , (req,res)=>{
+
+  //check user
+  const countryId= country.find((c)=> c.id === parseInt(req.params.id));
+  if(!countryId){return res.status(400).json({data: Null , massege:"this country id not find"})};
+
+  // validate
+
+  //map key
+   const countrys = country.map((cu)=>{
+    if(cu.id === parseInt(req.params.id)){
+      return {...cu, ...req.body}
+    }
+      return cu;
+  })
+
+  res.status(200).json({data: countrys , message: "ok"})
+
+})
+
+
 app.listen(port, () => {
   console.log(`server run on port: ${port}`);
 });
